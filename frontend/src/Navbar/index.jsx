@@ -44,7 +44,7 @@ const Navbar = () => {
                             <p>7000 BDT</p>
                         </div>
                         <div className="bg-[red] text-white w-[20vw] mx-auto align-center">
-                            <button>Check Out</button>
+                            <button>Cart</button>
                         </div>
                     </Sidebar>
 
