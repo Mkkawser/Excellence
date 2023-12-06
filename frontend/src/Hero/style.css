@@ -1,0 +1,49 @@
+.slick-icons {
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  /* border: 1px solid red; */
+  border-radius: 50%;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slick-icons--left,
+.slick-icons--right {
+  font-size: 2.5rem;
+}
+
+.slick-icons--left {
+  z-index: 1;
+}
+
+.slick-icons--right {
+  left: 50px;
+  color: blue;
+}
+
+.progress {
+  position: absolute;
+  bottom: -3.5rem;
+  left: 15rem;
+  width: 200px;
+  height: 1rem;
+  background-color: gray;
+}
+
+.progress--fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: red;
+  transition: 0.4s ease-in;
+}
+
+.slick-dots {
+  display: none;
+}
+ 
