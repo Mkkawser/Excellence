@@ -10,12 +10,14 @@ import { Footer } from "../Footer";
 export const Home = () => {
   return (
     <>
-      <Hero />
-      <Brand />
-      <Widget />
-      <Newsletter />
-      <About />
-      <Footer />
+      <div className="p-4">
+        <Hero />
+        <Brand />
+        <Widget />
+        <Newsletter />
+        <About />
+        <Footer />
+      </div>
     </>
   );
 };

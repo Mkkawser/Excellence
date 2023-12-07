@@ -6,8 +6,9 @@ import database from "./heroDB";
 import { RiArrowLeftSLine, RiArrowRightSLine } from "react-icons/ri";
 import "./style.css";
 
+// Hero component that displays a slider with images and promotional content
 const Hero = () => {
-  console.log(database);
+  // Slider configuration settings
   const settings = {
     dots: false,
     infinite: true,
@@ -17,45 +18,45 @@ const Hero = () => {
     autoplay: false,
     autoplaySpeed: 5000,
     swipeToSlide: true,
-    nextArrow: <NextIcon />,
-    prevArrow: <PrevIcon />,
-    responsive: [
-      {
-        breakpoint: 4000,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-      // {
-      //     breakpoint: 600,
-      //     settings: {
-      //         slidesToShow: 2,
-      //         slidesToScroll: 1,
-      //     },
-      // },
-      // {
-      //     breakpoint: 480,
-      //     settings: {
-      //         slidesToShow: 1,
-      //         slidesToScroll: 1,
-      //     },
-      // },
-    ],
+    nextArrow: <NextIcon />, // Custom next arrow icon component
+    prevArrow: <PrevIcon />, // Custom prev arrow icon component
+    slidesToShow: 1,
+    slidesToScroll: 1,
   };
+
+  // State to manage slider data
   const [data, setData] = useState(database);
-  const [sliderRef, setSliderRef] = useState(null);
+
   return (
     <>
-      <Slider {...settings} className="flex">
+      {/* Slider component with custom settings */}
+      <Slider {...settings} className="">
         {data.map((val, i) => {
           return (
-            <div className="" key={i}>
-              <img className="max-w-full h-auto" src={val.img} />
-              <div className=" top-0 text-[blue]">
-                <p className="text-[5vw]">{val.title1}</p>
-                <p className="">{val.title2}</p>
-                <p className="">{val.discount}</p>
+            <div className="relative p-4" key={i}>
+              {/* Image of the slider banner */}
+              <img className="w-full h-auto bg-cover" src={val.img} />
+
+              {/* Content overlaid on the image */}
+              <div className="absolute top-[70px] left-[80px] text-[#ffffff]">
+                {/* Discount Button */}
+                <button className="bg-white text-[#151515] rounded-md p-1 text-[1.2vw]">
+                  WEEKEND DISCOUNT
+                </button>
+
+                {/* Title & Description */}
+                <p className="text-[4vw]">{val.title1}</p>
+                <p className="text-[5vw]">{val.title2}</p>
+                <p className="">
+                  Last Call up to
+                  <span className="text-[red] text-[3vw]">{val.discount}</span>%
+                  OFF!!!
+                </p>
+
+                {/* Shop Now Button */}
+                <button className="bg-[#0070dc] p-1 rounded-md ">
+                  Shop Now
+                </button>
               </div>
             </div>
           );
@@ -65,6 +66,7 @@ const Hero = () => {
   );
 };
 
+// Custom component for the previous arrow icon
 const PrevIcon = ({ onClick }) => {
   return (
     <div className="slick-icons slick-icons--left ">
@@ -76,6 +78,7 @@ const PrevIcon = ({ onClick }) => {
   );
 };
 
+// Custom component for the next arrow icon
 const NextIcon = ({ onClick }) => {
   return (
     <div className="slick-icons slick-icons--right">
@@ -83,4 +86,5 @@ const NextIcon = ({ onClick }) => {
     </div>
   );
 };
+
 export default Hero;

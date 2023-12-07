@@ -7,7 +7,7 @@ const Navbar = () => {
   const [visible, setVisible] = useState(false);
   return (
     <>
-      <div className="bg-[#ececec] flex items-center justify-between p-2">
+      <div className="bg-[#ececec] flex items-center justify-between p-2 m-2">
         {/* Menu */}
         <div className="md:hidden text-[8vw]">
           <MenuClick />
@@ -24,7 +24,7 @@ const Navbar = () => {
 
         {/* Menu */}
         <div className="flex">
-          <div className="hidden md:flex items-center mr-4 gap-4 uppercase">
+          <div className="hidden md:flex items-center mr-4 gap-4 uppercase xl:tfx">
             <Link to={"/phone"}>Phone</Link>
             <Link to={"/laptop"}>Laptop</Link>
             <Link to={"/gamming"}>Gamming</Link>

@@ -1,8 +1,7 @@
 .slick-icons {
   position: absolute;
-  width: 3rem;
-  height: 3rem;
-  /* border: 1px solid red; */
+  /* width: 3rem;
+  height: 3rem; */
   border-radius: 50%;
   font-size: 1.2rem;
   display: flex;
@@ -13,15 +12,19 @@
 .slick-icons--left,
 .slick-icons--right {
   font-size: 2.5rem;
+  z-index: 1;
+  position: absolute;
+  color: #989797 !important ;
 }
 
 .slick-icons--left {
-  z-index: 1;
+  bottom: 50%;
+  left: 10px;
 }
 
 .slick-icons--right {
-  left: 50px;
-  color: blue;
+  bottom: 50%;
+  right: 10px;
 }
 
 .progress {
@@ -46,4 +49,3 @@
 .slick-dots {
   display: none;
 }
- 
