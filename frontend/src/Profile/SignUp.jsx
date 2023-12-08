@@ -26,7 +26,7 @@ const SignUp = () => {
       .then((val) => {
         console.log(val.data);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.log(error.message));
   }, []);
 
   return (
