@@ -6,18 +6,20 @@ import Widget from "../Widget";
 import About from "../About";
 import Newsletter from "../Newsletter";
 import { Footer } from "../Footer";
+import Product from "../Product";
 
 export const Home = () => {
   return (
     <>
-      <div className="p-4">
+        <Product />
+      {/* <div className="p-4">
         <Hero />
         <Brand />
         <Widget />
         <Newsletter />
         <About />
         <Footer />
-      </div>
+      </div> */}
     </>
   );
 };

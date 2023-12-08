@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { BsCart } from "react-icons/bs";
+import { IoPersonCircleSharp } from "react-icons/io5";
 import MenuClick from "./menu";
+import "./navbar.css";
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
   return (
     <>
-      <div className="bg-[#ececec] flex items-center justify-between p-2 m-2">
+      <div className="bg-[#ececec] flex items-center justify-between p-2 m-2 sticky top-0 z-10">
         {/* Menu */}
         <div className="md:hidden text-[8vw]">
           <MenuClick />
@@ -30,6 +32,13 @@ const Navbar = () => {
             <Link to={"/gamming"}>Gamming</Link>
             <Link to={"/accessories"}>Accessories</Link>
             <Link to={"/blog"}>Blog</Link>
+            <div className="dropdown">
+              <IoPersonCircleSharp className="text-[30px]" />
+              <div className="dropdown-content">
+                <Link to={""}>Login</Link>
+                <Link to={"/signup"}>Signup</Link>
+              </div>
+            </div>
           </div>
 
           <Link to={"/cart"}>
