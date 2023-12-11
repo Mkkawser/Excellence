@@ -6,7 +6,14 @@ import MenuClick from "./menu";
 import "./navbar.css";
 
 const Navbar = () => {
-  const [visible, setVisible] = useState(false);
+  const [isLogin, setisLogin] = useState(localStorage.getItem("isLogin"));
+
+  const logoutHandle = () => {
+    localStorage.removeItem("token");
+    localStorage.setItem("isLogin", false);
+    window.location.reload();
+  };
+
   return (
     <>
       <div className="bg-[#ececec] flex items-center justify-between p-2 m-2 sticky top-0 z-10">
@@ -31,13 +38,19 @@ const Navbar = () => {
             <Link to={"/laptop"}>Laptop</Link>
             <Link to={"/gamming"}>Gamming</Link>
             <Link to={"/accessories"}>Accessories</Link>
-            <Link to={"/blog"}>Blog</Link>
+            {/* <Link to={"/blog"}>Blog</Link> */}
             <div className="dropdown">
               <IoPersonCircleSharp className="text-[30px]" />
-              <div className="dropdown-content">
-                <Link to={""}>Login</Link>
-                <Link to={"/signup"}>Signup</Link>
-              </div>
+              {isLogin == "true" ? (
+                <div className="dropdown-content">
+                  <button onClick={logoutHandle}>logout</button>
+                </div>
+              ) : (
+                <div className="dropdown-content">
+                  <Link to={"/login"}>Login</Link>
+                  <Link to={"/signup"}>Signup</Link>
+                </div>
+              )}
             </div>
           </div>
 

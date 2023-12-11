@@ -10,9 +10,16 @@ const SignUp = () => {
   });
 
   //Submit Data
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    await axios
+      .post("http://localhost:3000/api/profile", formData)
+      .then((val) => {
+        console.log(val.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   // Controll Input
@@ -22,11 +29,13 @@ const SignUp = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/")
+      .get("http://localhost:3000/api/profile")
       .then((val) => {
         console.log(val.data);
       })
-      .catch((error) => console.log(error.message));
+      .catch((error) => {
+        console.log(error.message);
+      });
   }, []);
 
   return (
