@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 
 mongoose
   .connect(
-    `mongodb+srv://Mkkawser:${process.env.password}@cluster0.ed1v50g.mongodb.net/myapp`
+    `mongodb+srv://Mkkawser:irumorgan420@cluster0.ed1v50g.mongodb.net/myapp`
   )
   .then(console.log("connect"))
   .catch(() => console.log("Server Error"));
