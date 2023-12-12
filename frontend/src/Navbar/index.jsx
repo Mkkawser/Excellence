@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { BsCart } from "react-icons/bs";
 import { IoPersonCircleSharp } from "react-icons/io5";
+import { Badge } from "primereact/badge";
+import { Button } from "primereact/button";
 import MenuClick from "./menu";
 import "./navbar.css";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const [isLogin, setisLogin] = useState(localStorage.getItem("isLogin"));
@@ -13,6 +16,9 @@ const Navbar = () => {
     localStorage.setItem("isLogin", false);
     window.location.reload();
   };
+
+  let count = useSelector((state) => state.CartSlice.items.length);
+  // console.log(count);
 
   return (
     <>
@@ -54,8 +60,14 @@ const Navbar = () => {
             </div>
           </div>
 
-          <Link to={"/cart"}>
-            <BsCart className="text-[6vw]" />
+          <Link to={"/cart"} className="flex">
+            <BsCart className="text-[6vw]">
+              <Badge value={2}>h</Badge>
+            </BsCart>
+            <Badge
+              value={count == "0" ? "" : `${count}`}
+              className="absolute right-1"
+            ></Badge>
           </Link>
         </div>
       </div>

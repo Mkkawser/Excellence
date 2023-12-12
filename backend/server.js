@@ -15,7 +15,7 @@ mongoose
   .connect(
     `mongodb+srv://Mkkawser:${process.env.password}@cluster0.ed1v50g.mongodb.net/myapp`
   )
-  .then(() => console.log("connect"))
+  .then(console.log("connect"))
   .catch(() => console.log("Server Error"));
 
 app.use(profileRouter);

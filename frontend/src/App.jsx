@@ -5,6 +5,7 @@ import { Footer } from "./Footer";
 import { Home } from "./Home";
 import SignUp from "./Profile/SignUp";
 import Login from "./Profile/login";
+import Cart from "./Cart";
 
 function App() {
   const [isLogin, setisLogin] = useState(localStorage.getItem("isLogin"));
@@ -15,6 +16,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="/signup" element={<SignUp />} />
           <Route
             path="/login"

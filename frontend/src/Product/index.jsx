@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { addTocart } from "../Cart/CartSlice";
 
 const Product = () => {
   const [products, setProducts] = useState([]);
@@ -28,9 +30,12 @@ const Product = () => {
 };
 
 const Card = ({ products }) => {
+  const dispatch = useDispatch();
   const handleClick = () => {
-    console.log(products);
+    const { id } = products;
+    dispatch(addTocart({ id,products }));
   };
+
   return (
     <div className="flex flex-col overflow-hidden m-2">
       <img
