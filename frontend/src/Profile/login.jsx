@@ -17,7 +17,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await axios
-      .post("http://localhost:3000/api/login", formData)
+      .post("https://excellence-six.vercel.app/api/login", formData)
       .then((val) => {
         localStorage.setItem("token", val.data.token);
         localStorage.setItem("isLogin", true);
