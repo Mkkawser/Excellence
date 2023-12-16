@@ -6,6 +6,7 @@ import { Home } from "./Home";
 import SignUp from "./Profile/SignUp";
 import Login from "./Profile/login";
 import Cart from "./Cart";
+import Profile from "./Profile";
 
 function App() {
   const [isLogin, setisLogin] = useState(localStorage.getItem("isLogin"));
@@ -22,9 +23,9 @@ function App() {
             path="/login"
             element={isLogin == "true" ? <Navigate to={"/"} /> : <Login />}
           />
+          <Route path="/profile" element={<Profile />} />
           <Route path="*" element={<h1>Not Found</h1>} />
         </Routes>
-        {/* <Footer /> */}
       </BrowserRouter>
     </>
   );

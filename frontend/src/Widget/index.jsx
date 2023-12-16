@@ -2,7 +2,6 @@ import React from "react";
 import WidgetDB from "./widgetDB";
 
 const Widget = () => {
-  console.log(WidgetDB);
   return (
     <>
       <div className="grid grid-cols md:grid-cols-3 p-4 gap-4">

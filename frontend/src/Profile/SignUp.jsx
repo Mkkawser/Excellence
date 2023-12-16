@@ -13,7 +13,8 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await axios
-      .post("https://excellence-six.vercel.app/api/profile", formData)
+      // https://excellence-six.vercel.app/api/profile
+      .post("http://localhost:5000/api/profile", formData)
       .then((val) => {
         console.log(val.data);
       })

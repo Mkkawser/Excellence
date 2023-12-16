@@ -18,6 +18,12 @@ const profileSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  avatar: {
+    type: String,
+  },
+  cloud_id: {
+    type: String,
+  },
 });
 
 const profileModel = mongoose.model("profile", profileSchema);

@@ -11,15 +11,15 @@ import Product from "../Product";
 export const Home = () => {
   return (
     <>
-        <Product />
-      {/* <div className="p-4">
         <Hero />
+        <Product />
+        <div className="p-4">
         <Brand />
         <Widget />
         <Newsletter />
         <About />
         <Footer />
-      </div> */}
+      </div>  
     </>
   );
 };

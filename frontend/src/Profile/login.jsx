@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { redirect, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -8,20 +7,16 @@ const Login = () => {
     pass: "",
   });
 
-  const [validate, setValidate] = useState({
-    email: "",
-    pass: "",
-  });
-  const navigate = useNavigate();
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     await axios
-      .post("https://excellence-six.vercel.app/api/login", formData)
+      // https://excellence-six.vercel.app/api/login
+      .post("http://localhost:5000/api/login", formData)
       .then((val) => {
-        localStorage.setItem("token", val.data.token);
+        localStorage.setItem("token",val.data.token);
+        localStorage.setItem("user_id",val.data.id);
         localStorage.setItem("isLogin", true);
-        window.location.reload();
+          window.location.reload();
       })
       .catch((err) => console.log(err));
   };
