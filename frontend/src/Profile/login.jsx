@@ -10,13 +10,13 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await axios
-      // https://excellence-six.vercel.app/api/login
-      .post("http://localhost:5000/api/login", formData)
+      //http://localhost:5000/api/login
+      .post("https://excellence-six.vercel.app/api/login", formData)
       .then((val) => {
-        localStorage.setItem("token",val.data.token);
-        localStorage.setItem("user_id",val.data.id);
+        localStorage.setItem("token", val.data.token);
+        localStorage.setItem("user_id", val.data.id);
         localStorage.setItem("isLogin", true);
-          window.location.reload();
+        window.location.reload();
       })
       .catch((err) => console.log(err));
   };
