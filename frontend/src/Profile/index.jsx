@@ -6,8 +6,9 @@ const Profile = () => {
   const id = localStorage.getItem("user_id");
   const [profile, setProfile] = useState([]);
   useEffect(() => {
+    // http://localhost:5000/api/profile
     axios
-      .get(`http://localhost:5000/api/profile/${id}`)
+      .get(`https://excellence-six.vercel.app/api/profile/${id}`)
       .then((val) => setProfile(val.data[0]))
       .catch((err) => console.log(err));
   }, []);

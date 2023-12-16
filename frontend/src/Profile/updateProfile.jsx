@@ -9,10 +9,14 @@ const Update_profile = () => {
     formData.append("profile_id", localStorage.getItem("user_id"));
 
     try {
-      const response = await fetch("http://localhost:5000/api/profile", {
-        method: "PUT",
-        body: formData,
-      });
+      // http://localhost:5000/api/profile
+      const response = await fetch(
+        "https://excellence-six.vercel.app/api/profile",
+        {
+          method: "PUT",
+          body: formData,
+        }
+      );
 
       if (response.ok) {
         console.log("File uploaded successfully!");

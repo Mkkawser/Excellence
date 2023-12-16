@@ -26,9 +26,10 @@ const Navbar = () => {
   let count = useSelector((state) => state.CartSlice.items.length);
 
   useEffect(() => {
+    // http://localhost:5000/api/profile
     axios
       .get(
-        `http://localhost:5000/api/profile/${localStorage.getItem("user_id")}`
+        `https://excellence-six.vercel.app/api/profile/${localStorage.getItem("user_id")}`
       )
       .then((val) => {
         setData(val.data[0]);

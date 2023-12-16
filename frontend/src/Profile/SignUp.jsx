@@ -29,8 +29,9 @@ const SignUp = () => {
   };
 
   useEffect(() => {
+    // http://localhost:3000/api/profile
     axios
-      .get("http://localhost:3000/api/profile")
+      .get("https://excellence-six.vercel.app/api/profile")
       .then((val) => {
         console.log(val.data);
       })
